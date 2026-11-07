@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#07141b" />
+  <title>OVERTIME — Turbo League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <div id="viewport"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◈</span><span>AFTER<span class="brand-dim">BURN</span></span><i>FIELD 01</i></div>
+      <div class="match-tag"><span class="live-dot"></span> EXHIBITION <b>·</b> 1V1</div>
+      <button class="sound-button" id="soundToggle" aria-label="Toggle sound">♪ <span>SOUND ON</span></button>
+    </header>
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="team-score blue-score"><div class="team-name"><span class="team-dot"></span> CIRCUIT <small>BOT</small></div><strong id="blueScore">0</strong></div>
+      <div class="clock"><span class="clock-label">FIRST TO</span><strong>03</strong><span class="clock-line"></span><span class="clock-state" id="clockState">KICK OFF</span></div>
+      <div class="team-score orange-score"><strong id="orangeScore">0</strong><div class="team-name">ROCKETS <small>YOU</small><span class="team-dot"></span></div></div>
+    </section>
+    <div class="boost-panel"><span class="boost-label">BOOST</span><strong id="boostValue">100</strong><div class="boost-track"><i id="boostFill"></i></div><span class="boost-key">SHIFT</span></div>
+    <div class="speed-panel"><strong id="speedValue">000</strong><span>KM/H</span></div>
+    <div class="event-banner" id="eventBanner"><span id="eventText">3</span></div>
+    <div class="toast" id="toast">FIRST TO THREE WINS</div>
+    <div class="reticle"><span></span><i></i></div>
+    <footer class="bottom-hud">
+      <div class="controls-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>DRIVE</span><kbd class="boost-hint">SHIFT</kbd><span>BOOST</span></div>
+      <div class="ball-status"><i></i> BALL CAM <b>·</b> ON</div>
+      <button class="reset-button" id="restartButton">↻ <span>RESET MATCH</span></button>
+    </footer>
+    <section class="touch-controls" aria-label="Touch controls">
+      <div class="touch-left"><div class="stick" id="stick"><div class="stick-knob" id="stickKnob"></div><span class="stick-label">DRIVE</span></div></div>
+      <div class="touch-right">
+        <button class="action-button jump-button" data-action="jump"><span>↑</span><small>JUMP</small></button>
+        <button class="action-button boost-button" data-action="boost"><span>ϟ</span><small>BOOST</small></button>
+        <button class="action-button drift-button" data-action="drift"><span>◉</span><small>DRIFT</small></button>
+      </div>
+    </section>
+    <div class="screen-cover" id="cover">
+      <div class="cover-grid"></div><div class="cover-orbit orbit-one"></div><div class="cover-orbit orbit-two"></div>
+      <div class="cover-content">
+        <div class="eyebrow"><span></span> THE ARENA IS YOURS <span></span></div>
+        <h1>FULL<br><em>THROTTLE</em></h1>
+        <p>One car. One rival. Three goals to glory.</p>
+        <button class="play-button" id="playButton"><span>ENTER THE ARENA</span><b>↗</b></button>
+        <div class="cover-foot"><span>01 — 01</span><span>NEON CIRCUIT · 2025</span></div>
+      </div>
+      <div class="cover-side-note">NO BRAKES<br>NO MERCY<br><b>JUST ROCKETS</b></div>
+    </div>
+    <div class="result-cover" id="resultCover">
+      <div class="result-kicker">MATCH COMPLETE</div><h2 id="resultTitle">VICTORY</h2><p id="resultCopy">You own the pitch.</p>
+      <button class="play-button" id="rematchButton"><span>RUN IT BACK</span><b>↻</b></button>
+    </div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
